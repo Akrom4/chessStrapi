@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "players",
+  "info": {
+    "singularName": "player",
+    "pluralName": "players",
+    "displayName": "Player",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Lastname": {
+      "type": "string",
+      "required": true
+    },
+    "Firstname": {
+      "type": "string"
+    },
+    "Birthdate": {
+      "type": "date"
+    },
+    "Picture": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "Biography": {
+      "type": "text"
+    },
+    "openings": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::opening.opening",
+      "mappedBy": "player"
+    }
+  }
+}

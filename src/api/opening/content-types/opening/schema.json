@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "openings",
+  "info": {
+    "singularName": "opening",
+    "pluralName": "openings",
+    "displayName": "Opening",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "Link": {
+      "type": "string"
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "player": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::player.player",
+      "inversedBy": "openings"
+    },
+    "Description": {
+      "type": "richtext"
+    },
+    "favorites": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::favorite.favorite",
+      "mappedBy": "openings"
+    }
+  }
+}
